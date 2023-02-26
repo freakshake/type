@@ -5,8 +5,9 @@ import (
 	"io"
 	"time"
 
-	"github.com/freakshake/pkg/type/optional"
 	"github.com/google/uuid"
+
+	"github.com/freakshake/type/optional"
 )
 
 type ID string
