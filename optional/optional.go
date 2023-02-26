@@ -1,7 +1,7 @@
 package optional
 
 import (
-	// _ "database/sql"
+	_ "database/sql"
 	"database/sql/driver"
 	"encoding/json"
 
