@@ -1,10 +1,11 @@
 package optional
 
 import (
-	_ "database/sql"
+	// _ "database/sql"
 	"database/sql/driver"
 	"encoding/json"
-	_ "unsafe"
+
+	// _ "unsafe"
 
 	"github.com/freakshake/xerror"
 )
