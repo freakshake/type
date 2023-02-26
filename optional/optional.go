@@ -4,8 +4,7 @@ import (
 	_ "database/sql"
 	"database/sql/driver"
 	"encoding/json"
-
-	// _ "unsafe"
+	_ "unsafe"
 
 	"github.com/freakshake/xerror"
 )
@@ -70,8 +69,7 @@ func (o *Optional[T]) Scan(value any) error {
 		*o = None[T]()
 		return nil
 	}
-	var err error
-	// err := convertAssign(&o.value, value)
+	err := convertAssign(&o.value, value)
 	xerror.Wrap(&err, "%T.Scan(%v)", *o, value)
 
 	if err == nil {
@@ -99,5 +97,5 @@ func (o Optional[T]) GetOr(f func() T) T {
 	return o.value
 }
 
-// go :  l inkname convertAssign database/sql.convertAssign
-// func convertAssign(dest, src any) error
+//go:linkname convertAssign database/sql.convertAssign
+func convertAssign(dest, src any) error
